@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Student Diet Infographic</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header id="intro">
+        <h1>College Diets: The Invisible Epidemic</h1>
+        <p>Scroll down to explore the nutritional habits of 10 typical college students representing broader campus demographics.</p>
+        <p class="subtitle">Data reference: <a href="https://fdc.nal.usda.gov/" target="_blank">USDA FoodData Central</a></p>
+    </header>
+
+    <section id="scrolly">
+        <!-- Sticky Graphic for Avatars -->
+        <figure>
+            <div class="avatar-grid" id="avatar-grid">
+                <!-- Avatars will be injected by JavaScript -->
+            </div>
+        </figure>
+
+        <!-- Scrolling Steps container -->
+        <article>
+            <div class="step" data-step="intro">
+                <h2>Meet the Students</h2>
+                <p>These 10 students represent the demographics of our survey (73% female, 27% male). Let's follow them through a typical day of eating.</p>
+            </div>
+            
+            <div class="step" data-step="breakfast">
+                <h2>Breakfast</h2>
+                <p>Breakfast is often skipped or rushed. While some meet the USDA standards, watch how the gap begins for our 10 students.</p>
+            </div>
+
+            <div class="step" data-step="lunch">
+                <h2>Lunch</h2>
+                <p>Between classes, convenience takes over. Notice how refined grains and low fruit intake start to show.</p>
+            </div>
+
+            <div class="step" data-step="snack">
+                <h2>Snack</h2>
+                <p>The afternoon slump brings snack-heavy, lower-quality choices for many, while a few opt for plant-forward options.</p>
+            </div>
+
+            <div class="step" data-step="dinner">
+                <h2>Dinner</h2>
+                <p>The final meal of the day. A chance to catch up on nutrition, but irregularity and low dairy/fish consumption persist.</p>
+            </div>
+            
+            <div class="step" data-step="conclusion">
+                <h2>Summary</h2>
+                <p>Understanding these nutritional deficits is the first step toward building healthier campus food environments.</p>
+            </div>
+
+            <div class="step" data-step="outro">
+                <h2>Thank You</h2>
+                <p>Thank you for exploring the invisible epidemic of college diets. We hope this visualization helps bring awareness to the importance of healthy, balanced eating habits.</p>
+            </div>
+        </article>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
