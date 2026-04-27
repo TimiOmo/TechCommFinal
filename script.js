@@ -11,6 +11,11 @@ const students = [
     { id: 10, gender: 'female', label: 'Lowest Intake', desc: 'Low food intake, skipping.', breakfast: 'None', lunch: 'Half a sandwich', snack: 'None', dinner: 'Small soup', score: 30 }
 ];
 
+const avatarsImgs = {
+    male: 'images/male_idle.gif',
+    female: 'images/female_idle.gif'
+};
+
 document.addEventListener('DOMContentLoaded', () => {
     const grid = document.getElementById('avatar-grid');
     const steps = document.querySelectorAll('.step');
@@ -20,13 +25,16 @@ document.addEventListener('DOMContentLoaded', () => {
         const div = document.createElement('div');
         div.className = `avatar ${student.gender}`;
         div.dataset.id = student.id;
+        const avatar = avatarsImgs[student.gender];
         
         // Placeholder icons for Male/Female
-        const icon = student.gender === 'male' ? '👨' : '👩';
+        // const icon = student.gender === 'male' ? '👨' : '👩';
         
         div.innerHTML = `
-            <div class="avatar-icon">${icon}</div>
-            <div class="avatar-label">${student.label}</div>
+        <div class="avatar-icon">
+            <img src="${avatar}" alt="${student.label}" />
+        </div>
+        <div class="avatar-label">${student.label}</div>
             
             <!-- Graph Section -->
             <div class="nutrition-graph">
