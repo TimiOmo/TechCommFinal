@@ -111,8 +111,16 @@ figure {
 }
 
 .avatar-icon {
+    margin-top: 15px;
     font-size: 3rem;
     margin-bottom: 15px;
+}
+
+.avatar-icon img {
+    image-rendering: pixelated;
+    width: 100px;   /* increase this for size */
+    height: 100px;  /* keep equal for square */
+    object-fit: cover;
 }
 
 .avatar-label {
