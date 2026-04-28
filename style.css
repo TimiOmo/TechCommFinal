@@ -16,8 +16,44 @@ body {
 
 a { color: var(--accent-color); }
 
-/* Header */
-#intro {
+/* Final Summary Chart */
+.final-chart {
+    margin-top: 20px;
+    background: rgba(30,30,30,0.8);
+    padding: 15px;
+    border-radius: 8px;
+    border: 1px solid #555;
+}
+
+.summary-stat {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.stat-name {
+    font-size: 0.85rem;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #ddd;
+}
+
+.stat-bar {
+    width: 100%;
+    height: 12px;
+    background: #444;
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+.stat-fill {
+    height: 100%;
+    background: var(--accent-color);
+    border-radius: 6px;
+    transition: width 1s ease-in-out;
+}
+
+/* Header and Footer */
+#intro, #outro {
     height: 100vh;
     display: flex;
     flex-direction: column;
@@ -132,21 +168,29 @@ figure {
 
 /* Individual Graph Styles */
 .nutrition-graph {
-    width: 80%;
-    margin-bottom: 15px;
-    margin-top: 10px;
+    width: 90%;
+    margin-bottom: 10px;
+    margin-top: 5px;
+}
+
+.graph-row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 4px;
 }
 
 .graph-label {
-    font-size: 0.6rem;
+    font-size: 0.55rem;
     color: #aaa;
-    margin-bottom: 5px;
+    width: 20px;
+    text-align: left;
+    margin-right: 5px;
     text-transform: uppercase;
 }
 
 .bar-bg {
-    width: 100%;
-    height: 8px;
+    flex-grow: 1;
+    height: 6px;
     background: #444;
     border-radius: 4px;
     overflow: hidden;
@@ -162,7 +206,6 @@ figure {
 
 .avatar-tooltip {
     position: absolute;
-    bottom: -100px;
     left: 50%;
     transform: translateX(-50%);
     background: #333;
@@ -174,6 +217,16 @@ figure {
     pointer-events: none;
     transition: opacity 0.3s;
     z-index: 10;
+}
+
+/* Top row (1-5): Tooltip drops below */
+.avatar:nth-child(-n+5) .avatar-tooltip {
+    top: calc(100% + 10px);
+}
+
+/* Bottom row (6-10): Tooltip pops above */
+.avatar:nth-child(n+6) .avatar-tooltip {
+    bottom: calc(100% + 10px);
 }
 
 .avatar.active-tooltip .avatar-tooltip {
